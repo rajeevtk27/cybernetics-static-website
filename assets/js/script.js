@@ -7,7 +7,15 @@ $(function() {
 	01. MENU JS
 	*===================================*/
  
-        $("#site-header").addClass("nav-fixed");
+        $(window).on("scroll", function() {
+    var scroll = $(window).scrollTop();
+
+    if (scroll >= 80) {
+      $("#site-header").addClass("nav-fixed");
+    } else {
+      $("#site-header").removeClass("nav-fixed");
+    }
+  });
   
   //Main navigation Active Class Add Remove
   $(".navbar-toggler").on("click", function() {
